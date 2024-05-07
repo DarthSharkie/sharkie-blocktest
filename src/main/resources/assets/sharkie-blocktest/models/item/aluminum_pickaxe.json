@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "sharkie-blocktest:item/aluminum_pickaxe"
+  }
+}
