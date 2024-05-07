@@ -17,9 +17,13 @@ public class SharkieBlockTest implements ModInitializer {
     public static final String MODID = "sharkie-blocktest";
     public static final Identifier BAUXITE_ORE_IDENTIFIER = new Identifier(MODID, "bauxite_ore");
 
+    public static final Item ALUMINUM_INGOT = new Item(new Item.Settings());
+    public static final Identifier ALUMINUM_INGOT_IDENTIFIER = new Identifier(MODID, "aluminum_ingot");
+
     @Override
     public void onInitialize() {
         Registry.register(Registries.BLOCK, BAUXITE_ORE_IDENTIFIER, BAUXITE_BLOCK);
         Registry.register(Registries.ITEM, BAUXITE_ORE_IDENTIFIER, BAUXITE_ITEM);
+        Registry.register(Registries.ITEM, ALUMINUM_INGOT_IDENTIFIER, ALUMINUM_INGOT);
     }
 }
