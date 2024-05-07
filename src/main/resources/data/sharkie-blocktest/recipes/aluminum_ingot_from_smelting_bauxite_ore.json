@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 1.2,
+  "group": "aluminum_ingot",
+  "ingredient": {
+    "item": "sharkie-blocktest:bauxite_ore"
+  },
+  "result": "sharkie-blocktest:aluminum_ingot"
+}

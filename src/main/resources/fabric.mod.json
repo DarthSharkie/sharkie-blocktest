@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "sharkie-blocktest",
+  "version": "${version}",
+  "name": "Sharkie-BlockTest",
+  "description": "Fabric mod to test making blocks, block items, and other block-related code",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/stevenmhood/fabric-blocktest.git"
+  },
+  "license": "Apache-2.0",
+  "icon": "assets/sharkie-blocktest/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.sharkie.minecraft.sharkieblocktest.client.SharkieBlockTestClient"
+    ],
+    "main": [
+      "me.sharkie.minecraft.sharkieblocktest.SharkieBlockTest"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
