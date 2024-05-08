@@ -17,6 +17,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.PlacedFeature;
@@ -31,6 +32,14 @@ public class SharkieBlockTest implements ModInitializer {
     public static final Item ALUMINUM_INGOT = new Item(new Item.Settings());
     public static final Identifier ALUMINUM_INGOT_IDENTIFIER = new Identifier(MODID, "aluminum_ingot");
 
+    public static final Block ALUMINUM_BLOCK = new Block(FabricBlockSettings.create()
+                                                                            .strength(5.0f, 6.0f)
+                                                                            .requiresTool()
+                                                                            .mapColor(MapColor.LIGHT_GRAY)
+                                                                            .sounds(BlockSoundGroup.METAL));
+    public static final Item ALUMINUM_BLOCK_ITEM = new BlockItem(ALUMINUM_BLOCK, new Item.Settings());
+    public static final Identifier ALUMINUM_BLOCK_IDENTIFIER = new Identifier(MODID, "aluminum_block");
+
     public static final Item ALUMINUM_PICKAXE = new PickaxeItem(AluminumToolMaterial.INSTANCE, 1, -2.8F, new Item.Settings());
     public static final Identifier ALUMINUM_PICKAXE_IDENTIFIER = new Identifier(MODID, "aluminum_pickaxe");
 
@@ -42,6 +51,10 @@ public class SharkieBlockTest implements ModInitializer {
 
         Registry.register(Registries.ITEM, ALUMINUM_INGOT_IDENTIFIER, ALUMINUM_INGOT);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content -> content.addAfter(Items.COPPER_INGOT, ALUMINUM_INGOT));
+
+        Registry.register(Registries.BLOCK, ALUMINUM_BLOCK_IDENTIFIER, ALUMINUM_BLOCK);
+        Registry.register(Registries.ITEM, ALUMINUM_BLOCK_IDENTIFIER, ALUMINUM_BLOCK_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.addAfter(Items.COPPER_BLOCK, ALUMINUM_BLOCK_ITEM));
 
         Registry.register(Registries.ITEM, ALUMINUM_PICKAXE_IDENTIFIER, ALUMINUM_PICKAXE);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(Items.IRON_PICKAXE, ALUMINUM_PICKAXE));

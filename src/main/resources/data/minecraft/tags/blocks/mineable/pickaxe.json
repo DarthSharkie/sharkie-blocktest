@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "sharkie-blocktest:aluminum_block",
     "sharkie-blocktest:bauxite_ore"
   ]
 }
