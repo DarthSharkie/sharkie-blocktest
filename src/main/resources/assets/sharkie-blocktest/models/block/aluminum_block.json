@@ -1,6 +1,7 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube_column",
   "textures": {
-    "all": "sharkie-blocktest:block/aluminum_block"
+    "side": "sharkie-blocktest:block/aluminum_block",
+    "end": "minecraft:block/iron_block"
   }
 }
